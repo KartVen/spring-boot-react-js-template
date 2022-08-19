@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  db:
+    image: mysql
+    container_name: mysql_db
+    environment:
+      MYSQL_ROOT_PASSWORD: secretpassword
+    restart: unless-stopped
+    ports:
+      - "3306:3306"
+    volumes:
+      - C:/Docker/volumes/mysql:/var/lib/mysql
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    name: spring_boot_react_network
+    driver: custom-driver-1

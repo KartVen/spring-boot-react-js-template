@@ -1,0 +1,11 @@
+spring:
+  jpa:
+    show-sql: true
+    defer-datasource-initialization: true
+  profiles:
+    default: dev
+  liquibase:
+    change-log: classpath:database/master.xml
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
